@@ -1,11 +1,12 @@
 import React from "react";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="bg-yellow-500">
-      <h1 className="font-sans_serif">Hello app component</h1>
-      <h1 className="font-serif">Hello app component</h1>
-      <h1 className="font-mono">Hello app component</h1>
+    <div className=" max-w-[1440px] mx-auto min-h-screen">
+      <div className="w-3/5 mx-auto py-12">
+        <Navbar />
+      </div>
     </div>
   );
 }
