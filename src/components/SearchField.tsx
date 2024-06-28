@@ -5,7 +5,7 @@ const SearchField = () => {
   return (
     <div className="bg-veryLightG dark:bg-darkGray w-full flex justify-between items-center p-5 mt-12 rounded-2xl shadow-sm">
       <input
-        className=" placeholder:text-gray placeholder:text-xl font-semibold w-3/4 bg-transparent"
+        className=" text-darkGray dark:text-white placeholder:text-gray placeholder:text-xl font-semibold w-3/4 bg-transparent"
         type="text"
         placeholder="Search for any word..."
       />
