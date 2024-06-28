@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import SearchField from "./components/SearchField";
+import ResultField from "./components/ResultField";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <div className="w-3/6 mx-auto py-12">
         <Navbar />
         <SearchField />
+        <ResultField />
       </div>
     </div>
   );
