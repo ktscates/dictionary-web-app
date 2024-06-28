@@ -6,7 +6,7 @@ const ResultField = () => {
     <div className="mt-12 ">
       <div className="flex justify-between items-center">
         <div className="flex flex-col gap-3">
-          <h1 className="text-5xl font-semibold">keyboard</h1>
+          <h1 className="text-5xl font-semibold dark:text-white">keyboard</h1>
           <p className="text-2xl text-purple">/ˈkiːbɔːd/</p>
         </div>
         <div>
@@ -14,11 +14,13 @@ const ResultField = () => {
         </div>
       </div>
       <div className="flex flex-col gap-6 mt-8">
-        <h1 className="text-darkGray text-xl font-bold">noun</h1>
+        <h1 className="text-darkGray text-xl font-bold dark:text-white">
+          noun
+        </h1>
         <div>
           <div>
             <h6 className="text-gray text-lg">Meaning</h6>
-            <ul className=" list-disc mt-5 space-y-6 text-darkGray ml-12">
+            <ul className=" list-disc marker:text-purple mt-5 space-y-6 text-darkGray dark:text-white ml-12">
               <li>
                 (etc.) A set of keys used to operate a typewriter, computer etc.
               </li>
@@ -39,18 +41,22 @@ const ResultField = () => {
             <p className="text-purple font-bold">electronic keyboard</p>
           </div>
         </div>
-        <h1 className="text-darkGray text-xl font-bold ">verb</h1>
+        <h1 className="text-darkGray text-xl font-bold dark:text-white">
+          verb
+        </h1>
         <div>
           <h6 className="text-gray text-lg">Meaning</h6>
-          <ul className=" list-disc my-5 space-y-3 text-darkGray ml-12">
+          <ul className=" list-disc my-5 space-y-3 text-darkGray dark:text-white ml-12">
             <li>To type on a computer keyboard. </li>
             <p className="text-gray">
               “Keyboarding is the part of this job I hate the most.”
             </p>
           </ul>
           <div className="flex gap-4 mt-5">
-            <h6 className="text-gray text-sm">Source</h6>
-            <p className="text-darkGray text-sm">electronic keyboard</p>
+            <h6 className="text-gray text-xs">Source</h6>
+            <p className="text-darkGray text-xs dark:text-white">
+              electronic keyboard
+            </p>
           </div>
         </div>
       </div>
