@@ -30,8 +30,8 @@ function App() {
   };
 
   return (
-    <div className=" max-w-[1440px] mx-auto min-h-screen dark:bg-black">
-      <div className="w-3/6 mx-auto py-12">
+    <div className=" lg:max-w-[1440px] lg:mx-auto min-h-screen dark:bg-black">
+      <div className="lg:w-3/6 md:w-11/12 w-11/12 mx-auto py-12">
         <Navbar changeTheme={changeTheme} />
         <SearchField />
         <ResultField />

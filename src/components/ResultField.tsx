@@ -1,16 +1,20 @@
 import React from "react";
 import play from "../assets/images/icon-play.svg";
+import playMB from "../assets/images/icon-play-mobile.svg";
 
 const ResultField = () => {
   return (
     <div className="mt-12 ">
       <div className="flex justify-between items-center">
-        <div className="flex flex-col gap-3">
-          <h1 className="text-5xl font-semibold dark:text-white">keyboard</h1>
+        <div className="flex flex-col md:gap-3 gap-2">
+          <h1 className="md:text-5xl text-[32px] font-semibold dark:text-white">
+            keyboard
+          </h1>
           <p className="text-2xl text-purple">/ˈkiːbɔːd/</p>
         </div>
         <div>
-          <img src={play} alt="play-icon" />
+          <img className="md:block hidden" src={play} alt="play-icon" />
+          <img className="md:hidden block" src={playMB} alt="play-icon" />
         </div>
       </div>
       <div className="flex flex-col gap-6 mt-8">
@@ -20,7 +24,7 @@ const ResultField = () => {
         <div>
           <div>
             <h6 className="text-gray text-lg">Meaning</h6>
-            <ul className=" list-disc marker:text-purple mt-5 space-y-6 text-darkGray dark:text-white ml-12">
+            <ul className=" list-disc marker:text-purple mt-5 space-y-6 text-darkGray dark:text-white ml-8">
               <li>
                 (etc.) A set of keys used to operate a typewriter, computer etc.
               </li>
