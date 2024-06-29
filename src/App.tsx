@@ -2,9 +2,28 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SearchField from "./components/SearchField";
 import ResultField from "./components/ResultField";
+import axios from "axios";
+import { WordData } from "./interfaces";
 
-function App() {
+const App: React.FC = () => {
   const [theme, setTheme] = useState("light");
+  const [data, setData] = useState<WordData | null>(null);
+
+  const getData = async (query: string) => {
+    try {
+      const response = await axios.get(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`
+      );
+      const result = response.data[0];
+      const { word, phonetics, meanings, sourceUrls } = result;
+
+      setData({ word, phonetics, meanings, sourceUrls });
+      console.log("data", { word, phonetics, meanings, sourceUrls });
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+      setData(null);
+    }
+  };
 
   const changeTheme = () => {
     // On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -30,14 +49,14 @@ function App() {
   };
 
   return (
-    <div className=" lg:max-w-[1440px] lg:mx-auto min-h-screen dark:bg-black">
+    <div className=" lg:mx-auto min-h-screen dark:bg-black">
       <div className="lg:w-3/6 md:w-11/12 w-11/12 mx-auto py-12">
         <Navbar changeTheme={changeTheme} />
-        <SearchField />
-        <ResultField />
+        <SearchField onSearch={getData} />
+        <ResultField data={data} />
       </div>
     </div>
   );
-}
+};
 
 export default App;

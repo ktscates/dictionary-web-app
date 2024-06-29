@@ -3,11 +3,28 @@ export interface NavbarProps {
 }
 
 export interface SearchFieldProps {
-  theme: string;
-  changeTheme: () => void;
+  onSearch: (query: string) => void;
+}
+
+export interface Phonetics {
+  text: string;
+  audio: string;
+}
+
+export interface Meanings {
+  word: string;
+  partOfSpeech: string;
+  definitions: { definition: string; example?: string }[];
+  synonyms: string[];
+}
+
+export interface WordData {
+  word: string;
+  phonetics: Phonetics[];
+  meanings: Meanings[];
+  sourceUrls: string[];
 }
 
 export interface ResultFieldProps {
-  theme: string;
-  changeTheme: () => void;
+  data: WordData | null;
 }
