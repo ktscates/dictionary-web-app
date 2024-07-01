@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from "react";
 import play from "../assets/images/icon-play.svg";
 import playMB from "../assets/images/icon-play-mobile.svg";
@@ -7,6 +8,8 @@ import emoji from "../assets/emoji.png";
 const ResultField: React.FC<ResultFieldProps> = ({ data, error }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioUrl, setAudioUrl] = useState("");
+
+  console.log(isPlaying, audioUrl);
 
   const playAudio = (audioUrl: string) => {
     const audio = new Audio(audioUrl);

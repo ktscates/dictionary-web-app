@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SearchField from "./components/SearchField";
@@ -15,6 +16,8 @@ const App: React.FC = () => {
     setSelectedFont(font);
     document.documentElement.style.setProperty("--font-family", font);
   };
+
+  console.log(selectedFont);
 
   const getData = async (query: string) => {
     try {
