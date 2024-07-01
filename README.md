@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/67ac0727-0bd2-46b9-b483-78989ccfe57b/deploy-status)](https://app.netlify.com/sites/ktscates-dictionary/deploys)
+
 # Dictionary Web App
 
 ## Table of Contents
