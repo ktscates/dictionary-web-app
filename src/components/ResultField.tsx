@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { useState } from "react";
 import play from "../assets/images/icon-play.svg";
 import playMB from "../assets/images/icon-play-mobile.svg";
