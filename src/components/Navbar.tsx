@@ -4,7 +4,10 @@ import moon from "../assets/images/icon-moon.svg";
 import { Select, Switch } from "@headlessui/react";
 import { NavbarProps } from "../interfaces";
 
-const Navbar: React.FC<NavbarProps> = ({ changeTheme }) => {
+const Navbar: React.FC<NavbarProps> = ({ changeTheme, changeFont }) => {
+  const handleFontChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    changeFont(event.target.value);
+  };
   return (
     <div className="flex justify-between items-center">
       <div>
@@ -12,13 +15,14 @@ const Navbar: React.FC<NavbarProps> = ({ changeTheme }) => {
       </div>
       <div className="flex justify-between items-center gap-4">
         <Select
-          className="bg-transparent font-semibold text-lg dark:bg-black text-darkGray dark:text-white px-4 py-2 dark:data-[focus]:bg-purple"
+          className="bg-transparent cursor-pointer font-semibold focus:outline-none text-lg dark:bg-black text-darkGray dark:text-white px-4 py-2 data-[focus]:bg-purple dark:data-[focus]:bg-purple"
           name="status"
           aria-label="Project status"
+          onChange={handleFontChange}
         >
-          <option value="sans-serif">Sans Serif</option>
-          <option value="serif">Serif</option>
-          <option value="mono">Mono</option>
+          <option value="Inter, sans-serif">Sans Serif</option>
+          <option value="Lora, serif">Serif</option>
+          <option value="Inconsolata, monospace">Mono</option>
         </Select>
         <div className="text-darkGray dark:text-white">|</div>
         <Switch

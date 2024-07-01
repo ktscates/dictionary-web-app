@@ -1,46 +1,69 @@
-# Getting Started with Create React App
+# Dictionary Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the App](#running-the-app)
+- [Components](#components)
+  - [Navbar](#navbar)
+  - [SearchField](#searchfield)
+  - [ResultField](#resultfield)
+- [API Integration](#api-integration)
 
-In the project directory, you can run:
+## Introduction
 
-### `npm start`
+This is a simple dictionary application built using React. The app allows users to search for word definitions and displays the results, including phonetics, meanings, and synonyms. Users can also switch between light and dark themes and choose different fonts for the text display.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Search for word definitions
+- Display phonetics, meanings, and synonyms of words
+- Switch between light and dark themes
+- Select different fonts
+- Handle errors and display appropriate messages
+- Responsive design
 
-### `npm test`
+## Technologies Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- TypeScript
+- TailwindCSS
+- Axios
+- Headless UI
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/ktscates/dictionary-web-app.git
+cd dictionary-app
+```
 
-### `npm run eject`
+2. **Install dependencies**:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Running the App**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This will start the app in development mode and open it in your default browser at http://localhost:3000.
 
-## Learn More
+## Api Integration
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app uses the Free Dictionary API to fetch word definitions. The axios library is used to make HTTP requests to the API.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Live Link
+
+Dictiionary web app: [Live](https://ktscates-dictionary.netlify.app/)

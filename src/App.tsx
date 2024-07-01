@@ -8,6 +8,13 @@ import { WordData } from "./interfaces";
 const App: React.FC = () => {
   const [theme, setTheme] = useState("light");
   const [data, setData] = useState<WordData | null>(null);
+  const [selectedFont, setSelectedFont] = useState("sans-serif");
+  const [error, setError] = useState(false);
+
+  const changeFont = (font: string) => {
+    setSelectedFont(font);
+    document.documentElement.style.setProperty("--font-family", font);
+  };
 
   const getData = async (query: string) => {
     try {
@@ -21,6 +28,7 @@ const App: React.FC = () => {
       console.log("data", { word, phonetics, meanings, sourceUrls });
     } catch (error) {
       console.error("Error fetching data: ", error);
+      setError(true);
       setData(null);
     }
   };
@@ -51,9 +59,9 @@ const App: React.FC = () => {
   return (
     <div className=" lg:mx-auto min-h-screen dark:bg-black">
       <div className="lg:w-3/6 md:w-11/12 w-11/12 mx-auto py-12">
-        <Navbar changeTheme={changeTheme} />
+        <Navbar changeTheme={changeTheme} changeFont={changeFont} />
         <SearchField onSearch={getData} />
-        <ResultField data={data} />
+        <ResultField data={data} error={error} />
       </div>
     </div>
   );

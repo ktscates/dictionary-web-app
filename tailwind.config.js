@@ -15,11 +15,6 @@ module.exports = {
         darkGray: "#2D2D2D",
         grey: "#3A3A3A",
       },
-      fontFamily: {
-        mono: ["Inconsolata", "monospace"],
-        sans_serif: ["Inter", "sans-serif"],
-        serif: ["Lora", "serif"],
-      },
     },
   },
   plugins: [],

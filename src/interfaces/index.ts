@@ -1,5 +1,6 @@
 export interface NavbarProps {
   changeTheme: () => void;
+  changeFont: (font: string) => void;
 }
 
 export interface SearchFieldProps {
@@ -27,4 +28,5 @@ export interface WordData {
 
 export interface ResultFieldProps {
   data: WordData | null;
+  error: boolean;
 }

@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import play from "../assets/images/icon-play.svg";
 import playMB from "../assets/images/icon-play-mobile.svg";
 import { ResultFieldProps } from "../interfaces";
+import emoji from "../assets/emoji.png";
 
-const ResultField: React.FC<ResultFieldProps> = ({ data }) => {
+const ResultField: React.FC<ResultFieldProps> = ({ data, error }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [audioUrl, setAudioUrl] = useState("");
+
+  const playAudio = (audioUrl: string) => {
+    const audio = new Audio(audioUrl);
+    audio.play();
+    setIsPlaying(true);
+    setAudioUrl(audioUrl);
+
+    audio.addEventListener("ended", () => {
+      setIsPlaying(false);
+      setAudioUrl("");
+    });
+  };
+
+  if (error) {
+    return (
+      <div className="mt-12 text-center">
+        <img src={emoji} alt="No Definitions Found" className="mx-auto mb-4" />
+        <p className="text-2xl">No Definitions Found</p>
+        <p className="text-gray mt-2">
+          Sorry pal, we couldn't find definitions for the word you were looking
+          for. You can try the search again at a later time or head to the web
+          instead.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       {data !== null ? (
@@ -13,12 +43,16 @@ const ResultField: React.FC<ResultFieldProps> = ({ data }) => {
               <h1 className="md:text-5xl text-[32px] font-semibold dark:text-white">
                 {data?.word}
               </h1>
-              <p className="text-2xl text-purple">{data?.phonetics[2]?.text}</p>
+
+              <p className="text-2xl text-purple">{data?.phonetics[0]?.text}</p>
             </div>
-            <div>
+            <button
+              className="cursor-pointer"
+              onClick={() => playAudio(data?.phonetics[0]?.audio)}
+            >
               <img className="md:block hidden" src={play} alt="play-icon" />
               <img className="md:hidden block" src={playMB} alt="play-icon" />
-            </div>
+            </button>
           </div>
           <div className="flex flex-col gap-6 mt-8">
             <h1 className="text-darkGray text-xl font-bold dark:text-white">
