@@ -9,6 +9,8 @@ const ResultField: React.FC<ResultFieldProps> = ({ data, error }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioUrl, setAudioUrl] = useState("");
 
+  console.log(isPlaying, audioUrl);
+
   const playAudio = (audioUrl: string) => {
     const audio = new Audio(audioUrl);
     audio.play();

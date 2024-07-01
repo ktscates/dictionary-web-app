@@ -17,6 +17,8 @@ const App: React.FC = () => {
     document.documentElement.style.setProperty("--font-family", font);
   };
 
+  console.log(selectedFont);
+
   const getData = async (query: string) => {
     try {
       const response = await axios.get(
